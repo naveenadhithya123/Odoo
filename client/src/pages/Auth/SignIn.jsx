@@ -32,10 +32,10 @@ export const SignIn = () => {
 
   const handleQuickLogin = (userType) => {
     if (userType === 'admin') {
-      setLoginIdOrEmail('OIADMI20220001');
+      setLoginIdOrEmail('ZOADMI20220001');
       setPassword('admin123');
     } else if (userType === 'employee') {
-      setLoginIdOrEmail('OIJODO20220001');
+      setLoginIdOrEmail('ZOJODO20220001');
       setPassword('password123');
     }
   };
@@ -83,7 +83,7 @@ export const SignIn = () => {
                   required
                   value={loginIdOrEmail}
                   onChange={(e) => setLoginIdOrEmail(e.target.value)}
-                  placeholder="e.g. OIJODO20220001 or name@company.com"
+                  placeholder="e.g. ZOJODO20220001 or name@company.com"
                   className="input-field pl-10"
                 />
               </div>
@@ -132,14 +132,14 @@ export const SignIn = () => {
                 onClick={() => handleQuickLogin('admin')}
                 className="px-2.5 py-1.5 text-xs bg-[#21262d] hover:bg-[#30363d] text-purple-300 border border-[#30363d] rounded-md transition-all text-left truncate"
               >
-                👔 Admin (OIADMI)
+                Admin (ZOADMI)
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickLogin('employee')}
                 className="px-2.5 py-1.5 text-xs bg-[#21262d] hover:bg-[#30363d] text-sky-300 border border-[#30363d] rounded-md transition-all text-left truncate"
               >
-                👤 Employee (OIJODO)
+                Employee (ZOJODO)
               </button>
             </div>
           </div>

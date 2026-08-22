@@ -51,7 +51,7 @@ Open **`http://localhost:3000`** in your browser.
 ### 1. Authentication & Auto-Provisioning
 - **Company Sign-Up:** Initial registration for company and admin setup with logo upload.
 - **Sign-In:** Single sign-in portal accepting either Login ID or Email + Password.
-- **Auto Login ID Format:** Enforces `[OI][First 2 of first name + First 2 of last name][Year][Serial]` (e.g. `OIJODO20260001`).
+- **Auto Login ID Format:** Enforces `[Company Code][First 2 of first name + First 2 of last name][Year][Serial]` (e.g. `ZOJODO20260001`).
 - **Temporary Password Generator:** Auto-generates secure temp passwords for newly hired employees created by Admin.
 
 ### 2. Post-Login Landing & Systray (Wireframes 1 & 2)
