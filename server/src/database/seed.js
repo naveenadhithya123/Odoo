@@ -30,7 +30,7 @@ async function seed() {
     const companyId = 'company-odoo-india-001';
     await db.prepare(`
       INSERT INTO companies (id, name, code, logo_url, phone, email)
-      VALUES (?, 'Odoo India', 'OI', '/uploads/company_logo.png', '+91 79 4000 3000', 'contact@odooindia.com')
+      VALUES (?, 'Zooz', 'ZO', '/uploads/company_logo.png', '+91 79 4000 3000', 'contact@zooz.com')
     `).run(companyId);
 
     // 2. Create Leave Types
@@ -51,8 +51,8 @@ async function seed() {
       {
         userId: 'user-admin-001',
         empId: 'emp-admin-001',
-        loginId: 'OIADMI20220001',
-        email: 'admin@odooindia.com',
+        loginId: 'ZOADMI20220001',
+        email: 'admin@zooz.com',
         passwordHash: adminPassHash,
         role: 'admin',
         firstName: 'Naveen',
@@ -80,8 +80,8 @@ async function seed() {
       {
         userId: 'user-emp-001',
         empId: 'emp-001',
-        loginId: 'OIJODO20220001',
-        email: 'john.doe@odooindia.com',
+        loginId: 'ZOJODO20220001',
+        email: 'john.doe@zooz.com',
         passwordHash: empPassHash,
         role: 'employee',
         firstName: 'John',
@@ -109,8 +109,8 @@ async function seed() {
       {
         userId: 'user-emp-002',
         empId: 'emp-002',
-        loginId: 'OISAJE20230002',
-        email: 'sarah.j@odooindia.com',
+        loginId: 'ZOSAJE20230002',
+        email: 'sarah.j@zooz.com',
         passwordHash: empPassHash,
         role: 'employee',
         firstName: 'Sarah',
@@ -138,8 +138,8 @@ async function seed() {
       {
         userId: 'user-emp-003',
         empId: 'emp-003',
-        loginId: 'OIRASH20240003',
-        email: 'rahul.sharma@odooindia.com',
+        loginId: 'ZORASH20240003',
+        email: 'rahul.sharma@zooz.com',
         passwordHash: empPassHash,
         role: 'employee',
         firstName: 'Rahul',
@@ -167,8 +167,8 @@ async function seed() {
       {
         userId: 'user-emp-004',
         empId: 'emp-004',
-        loginId: 'OIPRPA20240004',
-        email: 'priya.patel@odooindia.com',
+        loginId: 'ZOPRPA20240004',
+        email: 'priya.patel@zooz.com',
         passwordHash: empPassHash,
         role: 'employee',
         firstName: 'Priya',
@@ -196,8 +196,8 @@ async function seed() {
       {
         userId: 'user-emp-005',
         empId: 'emp-005',
-        loginId: 'OIAMKU20250005',
-        email: 'amit.kumar@odooindia.com',
+        loginId: 'ZOAMKU20250005',
+        email: 'amit.kumar@zooz.com',
         passwordHash: empPassHash,
         role: 'employee',
         firstName: 'Amit',
@@ -354,10 +354,10 @@ async function seed() {
     console.log('DAYFLOW HRMS SEED COMPLETED SUCCESSFULLY!');
     console.log('---------------------------------------------');
     console.log('Admin Account:');
-    console.log('  Login ID: OIADMI20220001 or admin@odooindia.com');
+    console.log('  Login ID: ZOADMI20220001 or admin@zooz.com');
     console.log('  Password: admin123');
     console.log('Employee Account:');
-    console.log('  Login ID: OIJODO20220001 or john.doe@odooindia.com');
+    console.log('  Login ID: ZOJODO20220001 or john.doe@zooz.com');
     console.log('  Password: password123');
     console.log('=============================================');
   } catch (err) {

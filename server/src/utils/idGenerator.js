@@ -1,17 +1,17 @@
 /**
  * Generates the standardized Dayflow Employee Login ID
- * Format: [OI][First 2 letters of first name + first 2 letters of last name][Year of Joining][Serial number]
- * Example: OIJODO20260001
+ * Format: [CompanyCode][First 2 letters of first name + first 2 letters of last name][Year of Joining][Serial number]
+ * Example: ZOJODO20260001 (Zooz company, John Doe, joined 2026)
  * 
  * @param {Object} db - Database connection
- * @param {string} companyCode - Company code prefix (e.g. 'OI')
+ * @param {string} companyCode - Company code prefix (e.g. 'ZO' for Zooz)
  * @param {string} firstName - Employee first name
  * @param {string} lastName - Employee last name
  * @param {string|number} joiningYear - Year of joining (e.g. 2026)
  * @returns {Promise<string>} Generated Login ID
  */
-async function generateLoginId(db, companyCode = 'OI', firstName = '', lastName = '', joiningYear = null) {
-  const code = (companyCode || 'OI').toUpperCase().slice(0, 2);
+async function generateLoginId(db, companyCode = 'ZO', firstName = '', lastName = '', joiningYear = null) {
+  const code = (companyCode || 'ZO').toUpperCase().slice(0, 2);
   
   // Clean names
   const f2 = (firstName.trim().replace(/[^a-zA-Z]/g, '') + 'XX').slice(0, 2).toUpperCase();

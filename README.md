@@ -23,7 +23,7 @@ npm run install:all
 ```
 
 ### 2. Seed Database
-Seeds default organization (**Odoo India**), default leave policies, Admin, and realistic employee profiles with skills, certifications, bank details, attendance logs, and salary structures.
+Seeds default organization (**Zooz**), default leave policies, Admin, and realistic employee profiles with skills, certifications, bank details, attendance logs, and salary structures.
 ```bash
 npm run seed
 ```
@@ -41,8 +41,8 @@ Open **`http://localhost:3000`** in your browser.
 
 | Role | Login ID / Email | Password | Access |
 |---|---|---|---|
-| **Admin / HR Officer** | `OIADMI20220001` or `admin@odooindia.com` | `admin123` | Full access, Employee Creation, Salary Info, Leave Approvals, Payroll & Reports |
-| **Standard Employee** | `OIJODO20220001` or `john.doe@odooindia.com` | `password123` | Self profile, Check In/Out, Monthly Attendance, Leave Calendar, View Payslips |
+| **Admin / HR Officer** | `ZOADMI20220001` or `admin@zooz.com` | `admin123` | Full access, Employee Creation, Salary Info, Leave Approvals, Payroll & Reports |
+| **Standard Employee** | `ZOJODO20220001` or `john.doe@zooz.com` | `password123` | Self profile, Check In/Out, Monthly Attendance, Leave Calendar, View Payslips |
 
 ---
 

@@ -10,7 +10,7 @@ async function runTests() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        loginIdOrEmail: 'OIADMI20220001',
+        loginIdOrEmail: 'ZOADMI20220001',
         password: 'admin123'
       })
     }).then(r => r.json());
@@ -24,7 +24,7 @@ async function runTests() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        loginIdOrEmail: 'OIJODO20220001',
+        loginIdOrEmail: 'ZOJODO20220001',
         password: 'password123'
       })
     }).then(r => r.json());
@@ -58,7 +58,7 @@ async function runTests() {
     console.log('   ✓ Generated Temp Password:', newEmpRes.employee.temp_password);
 
     // Validate Login ID format [OI][JA][SM][2026][000X]
-    const expectedPrefix = 'OIJASM2026';
+    const expectedPrefix = 'ZOJASM2026';
     if (newEmpRes.employee.login_id.startsWith(expectedPrefix)) {
       console.log(`   ✓ Login ID correctly formatted according to business spec: starts with ${expectedPrefix}`);
     } else {

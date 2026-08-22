@@ -403,7 +403,7 @@ export const EmployeeProfile = () => {
 
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-semibold px-2.5 py-1 rounded bg-[#21262d] text-gray-300 border border-[#30363d]">
-                    {employee.company_name || 'Odoo India'}
+                    {employee.company_name || 'Zooz'}
                   </span>
                 </div>
               </div>

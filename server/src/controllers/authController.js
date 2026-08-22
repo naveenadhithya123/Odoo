@@ -106,7 +106,7 @@ async function signUpCompany(req, res) {
       return res.status(400).json({ success: false, message: 'An account with this email already exists.' });
     }
 
-    // Generate Company code (e.g. Odoo India -> OI)
+    // Generate Company code (e.g. Zooz -> ZO, Acme Corp -> AC)
     const words = companyName.trim().split(/\s+/);
     let code = '';
     if (words.length >= 2) {

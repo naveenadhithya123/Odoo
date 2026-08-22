@@ -106,7 +106,7 @@ export const SignUp = () => {
                   required
                   value={formData.companyName}
                   onChange={handleChange}
-                  placeholder="e.g. Odoo India"
+                  placeholder="e.g. Zooz"
                   className="input-field pl-10"
                 />
               </div>
