@@ -594,7 +594,7 @@ export const EmployeeProfile = () => {
                       className="btn-primary text-xs px-3 py-1.5 flex items-center gap-1 flex-shrink-0"
                     >
                       <Plus size={14} />
-                      <span>+ Add Skills</span>
+                      <span>Add Skills</span>
                     </button>
                   </div>
                 )}
@@ -646,7 +646,7 @@ export const EmployeeProfile = () => {
                       className="btn-primary text-xs px-3 py-1.5 flex items-center gap-1 flex-shrink-0"
                     >
                       <Plus size={14} />
-                      <span>+ Add Cert</span>
+                      <span>Add Cert</span>
                     </button>
                   </div>
                 )}
