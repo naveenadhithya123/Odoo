@@ -36,16 +36,7 @@ export const SignIn = () => {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md z-10">
-        <div className="flex justify-center items-center gap-3">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white font-black text-2xl shadow-lg ring-1 ring-purple-400/30">
-            DF
-          </div>
-          <div>
-            <h1 className="text-2xl font-bold text-white tracking-tight">Dayflow</h1>
-            <p className="text-xs text-gray-400">"Every workday, perfectly aligned."</p>
-          </div>
-        </div>
-        <h2 className="mt-6 text-center text-xl font-bold tracking-tight text-white">
+        <h2 className="text-center text-xl font-bold tracking-tight text-white">
           Sign in to your HRMS Portal
         </h2>
       </div>
