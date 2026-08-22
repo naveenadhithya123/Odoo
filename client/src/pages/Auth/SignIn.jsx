@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { Lock, User, ArrowRight, ShieldCheck, Sparkles, AlertCircle } from 'lucide-react';
+import { Lock, User, ArrowRight, AlertCircle } from 'lucide-react';
 
 export const SignIn = () => {
   const [loginIdOrEmail, setLoginIdOrEmail] = useState('');
@@ -27,16 +27,6 @@ export const SignIn = () => {
       setError(err.message || 'Invalid credentials. Please verify your login details.');
     } finally {
       setLoading(false);
-    }
-  };
-
-  const handleQuickLogin = (userType) => {
-    if (userType === 'admin') {
-      setLoginIdOrEmail('ZOADMI20220001');
-      setPassword('admin123');
-    } else if (userType === 'employee') {
-      setLoginIdOrEmail('ZOJODO20220001');
-      setPassword('password123');
     }
   };
 
@@ -120,32 +110,8 @@ export const SignIn = () => {
             </div>
           </form>
 
-          {/* Quick Demo Credentials */}
-          <div className="mt-6 pt-5 border-t border-[#30363d]">
-            <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
-              <Sparkles size={13} className="text-purple-400" />
-              <span>Demo Quick Fill:</span>
-            </p>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={() => handleQuickLogin('admin')}
-                className="px-2.5 py-1.5 text-xs bg-[#21262d] hover:bg-[#30363d] text-purple-300 border border-[#30363d] rounded-md transition-all text-left truncate"
-              >
-                Admin (ZOADMI)
-              </button>
-              <button
-                type="button"
-                onClick={() => handleQuickLogin('employee')}
-                className="px-2.5 py-1.5 text-xs bg-[#21262d] hover:bg-[#30363d] text-sky-300 border border-[#30363d] rounded-md transition-all text-left truncate"
-              >
-                Employee (ZOJODO)
-              </button>
-            </div>
-          </div>
-
           {/* Initial Company Registration Link */}
-          <div className="mt-6 text-center">
+          <div className="mt-6 text-center pt-5 border-t border-[#30363d]">
             <p className="text-xs text-gray-400">
               Setting up a new organization?{' '}
               <Link to="/signup" className="text-purple-400 hover:text-purple-300 font-semibold underline underline-offset-2">
