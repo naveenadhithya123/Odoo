@@ -132,7 +132,7 @@ export const EmployeeGrid = () => {
           <div className="flex items-center gap-6">
             <span className="font-semibold text-gray-300">Live Status Legend:</span>
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              <span className="sr-only">Present:</span>
               <span>🟢 Present in office</span>
             </div>
             <div className="flex items-center gap-2">
@@ -140,7 +140,7 @@ export const EmployeeGrid = () => {
               <span>Approved Leave</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+              <span className="sr-only">Absent:</span>
               <span>🟡 Absent</span>
             </div>
           </div>
