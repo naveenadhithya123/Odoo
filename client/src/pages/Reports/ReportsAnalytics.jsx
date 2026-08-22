@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { reportService } from '../../services/api';
+import { downloadProtectedFile, reportService } from '../../services/api';
 import { BarChart3, Users, CheckCircle2, Plane, Clock, DollarSign, Download, Calendar } from 'lucide-react';
 
 export const ReportsAnalytics = () => {
@@ -26,9 +26,16 @@ export const ReportsAnalytics = () => {
     fetchAnalytics();
   }, []);
 
-  const handleExportCSV = () => {
+  const handleExportCSV = async () => {
     const url = reportService.getAttendanceCsvUrl(exportMonth, exportYear);
-    window.open(url, '_blank');
+    try {
+      await downloadProtectedFile(
+        url,
+        `attendance-${exportYear}-${String(exportMonth).padStart(2, '0')}.csv`
+      );
+    } catch (err) {
+      console.error('CSV export failed:', err);
+    }
   };
 
   return (

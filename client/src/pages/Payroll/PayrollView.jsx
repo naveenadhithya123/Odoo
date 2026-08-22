@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { payrollService } from '../../services/api';
+import { downloadProtectedFile, payrollService } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
 import { DollarSign, Download, Calendar, CheckCircle2, FileText, Sparkles, AlertCircle, RefreshCw } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -61,10 +61,14 @@ export const PayrollView = () => {
     }
   };
 
-  const handleDownloadPDF = (payslipId) => {
+  const handleDownloadPDF = async (payslipId) => {
     if (!payslipId) return;
     const url = payrollService.getPdfUrl(payslipId);
-    window.open(url, '_blank');
+    try {
+      await downloadProtectedFile(url, `payslip-${payslipId}.pdf`);
+    } catch (err) {
+      console.error('Payslip download failed:', err);
+    }
   };
 
   const monthNames = [

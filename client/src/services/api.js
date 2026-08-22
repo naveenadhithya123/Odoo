@@ -5,6 +5,40 @@ const api = axios.create({
   timeout: 15000,
 });
 
+const getDownloadFilename = (response, fallbackName) => {
+  const disposition = response.headers.get('content-disposition');
+  const match = disposition && disposition.match(/filename="?([^"]+)"?/i);
+  return match ? match[1] : fallbackName;
+};
+
+export const downloadProtectedFile = async (url, fallbackName) => {
+  const token = localStorage.getItem('dayflow_token');
+  const response = await fetch(url, {
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+  });
+
+  if (!response.ok) {
+    let message = `Download failed with status ${response.status}`;
+    try {
+      const errorData = await response.json();
+      message = errorData.message || message;
+    } catch {
+      // Keep the generic status message when the server does not return JSON.
+    }
+    throw new Error(message);
+  }
+
+  const blob = await response.blob();
+  const objectUrl = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = objectUrl;
+  link.download = getDownloadFilename(response, fallbackName);
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(objectUrl);
+};
+
 // Request Interceptor: Attach JWT Token
 api.interceptors.request.use(
   (config) => {
